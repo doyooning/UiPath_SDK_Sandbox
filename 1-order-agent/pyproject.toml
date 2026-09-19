@@ -1,0 +1,14 @@
+[project]
+name = "OrderAgent"
+version = "0.0.1"
+description = "OrderAgent"
+authors = [{ name = "Doyoon Kim", email = "dynii@cocoasoft.co.kr" }]
+dependencies = [
+    "uipath-langchain[bedrock,vertex]>=0.18.0, <0.19.0",
+]
+requires-python = ">=3.11"
+
+[dependency-groups]
+dev = [
+    "uipath-dev>=0.0.85",
+]

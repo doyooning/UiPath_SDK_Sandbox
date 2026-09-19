@@ -1,0 +1,98 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "0be0832e-7ac3-40aa-a0de-67b9bddc044b",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "request": {
+                        "description": "\uace0\uac1d\uc758 \uc790\uc5f0\uc5b4 \uc5c5\ubb34 \uc694\uccad",
+                        "title": "Request",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "request"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "description": "\uace0\uac1d\uc5d0\uac8c \ub3cc\ub824\uc904 \ub2f5\ubcc0",
+                        "title": "Response",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "response"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "analyze",
+                        "name": "analyze",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "execute",
+                        "name": "execute",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "respond",
+                        "name": "respond",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "analyze",
+                        "label": null
+                    },
+                    {
+                        "source": "analyze",
+                        "target": "execute",
+                        "label": null
+                    },
+                    {
+                        "source": "execute",
+                        "target": "respond",
+                        "label": null
+                    },
+                    {
+                        "source": "respond",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}
