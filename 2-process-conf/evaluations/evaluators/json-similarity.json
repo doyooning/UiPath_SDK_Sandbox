@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "id": "JsonSimilarityEvaluator",
+  "evaluatorTypeId": "uipath-json-similarity",
+  "description": "dry-run 에서 요청이 소개글 수정 / 게시물 업로드 작업으로 올바르게 분류되었는지 확인",
+  "evaluatorConfig": {
+    "name": "JsonSimilarityEvaluator",
+    "defaultEvaluationCriteria": {
+      "expectedOutput": { "intro_status": "skipped", "post_status": "skipped" }
+    }
+  }
+}

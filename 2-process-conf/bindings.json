@@ -1,0 +1,25 @@
+{
+    "version": "2.0",
+    "resources": [
+        {
+            "resource": "process",
+            "key": "velog_EditIntro.dynii1923@gmail.com's workspace",
+            "value": {
+                "name": { "defaultValue": "velog_EditIntro", "isExpression": false, "displayName": "Name" },
+                "folderPath": { "defaultValue": "dynii1923@gmail.com's workspace", "isExpression": false, "displayName": "Folder Path" },
+                "EntryPointUniqueId": { "defaultValue": "7d006da5-1c86-4de9-a7a1-b2ac5664b7f7", "isExpression": false, "displayName": "agent" }
+            },
+            "metadata": { "ActivityName": "invoke_async", "BindingsVersion": "2.2", "DisplayLabel": "FullName", "SubType": "process" }
+        },
+        {
+            "resource": "process",
+            "key": "velog_WritePost.dynii1923@gmail.com's workspace",
+            "value": {
+                "name": { "defaultValue": "velog_WritePost", "isExpression": false, "displayName": "Name" },
+                "folderPath": { "defaultValue": "dynii1923@gmail.com's workspace", "isExpression": false, "displayName": "Folder Path" },
+                "EntryPointUniqueId": { "defaultValue": "7d006da5-1c86-4de9-a7a1-b2ac5664b7f7", "isExpression": false, "displayName": "agent" }
+            },
+            "metadata": { "ActivityName": "invoke_async", "BindingsVersion": "2.2", "DisplayLabel": "FullName", "SubType": "process" }
+        }
+    ]
+}

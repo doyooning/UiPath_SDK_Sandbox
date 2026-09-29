@@ -1,0 +1,176 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "7d006da5-1c86-4de9-a7a1-b2ac5664b7f7",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "request": {
+                        "description": "velog \uc791\uc5c5 \uc694\uccad (\uc18c\uac1c\uae00 \uc218\uc815 / \uac8c\uc2dc\ubb3c \uc5c5\ub85c\ub4dc, \uc790\uc5f0\uc5b4)",
+                        "title": "Request",
+                        "type": "string"
+                    },
+                    "dry_run": {
+                        "default": false,
+                        "description": "True \uba74 \uacc4\ud68d\ub9cc \uc138\uc6b0\uace0 velog \ud504\ub85c\uc138\uc2a4\ub294 \uc2e4\ud589\ud558\uc9c0 \uc54a\ub294\ub2e4",
+                        "title": "Dry Run",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "request"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "description": "\ucc98\ub9ac \uacb0\uacfc \uc694\uc57d",
+                        "title": "Summary",
+                        "type": "string"
+                    },
+                    "intro_status": {
+                        "description": "\uc18c\uac1c\uae00 \uc218\uc815 \uacb0\uacfc: skipped | planned | success",
+                        "title": "Intro Status",
+                        "type": "string"
+                    },
+                    "post_status": {
+                        "description": "\uac8c\uc2dc\ubb3c \uc5c5\ub85c\ub4dc \uacb0\uacfc: skipped | planned | success",
+                        "title": "Post Status",
+                        "type": "string"
+                    },
+                    "intro_text": {
+                        "type": "string"
+                    },
+                    "post_title": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "summary",
+                    "intro_status",
+                    "post_status"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "plan",
+                        "name": "plan",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "draft_post",
+                        "name": "draft_post",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "edit_intro",
+                        "name": "edit_intro",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "write_post",
+                        "name": "write_post",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "respond",
+                        "name": "respond",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "plan",
+                        "label": null
+                    },
+                    {
+                        "source": "draft_post",
+                        "target": "edit_intro",
+                        "label": null
+                    },
+                    {
+                        "source": "draft_post",
+                        "target": "respond",
+                        "label": null
+                    },
+                    {
+                        "source": "draft_post",
+                        "target": "write_post",
+                        "label": null
+                    },
+                    {
+                        "source": "edit_intro",
+                        "target": "respond",
+                        "label": null
+                    },
+                    {
+                        "source": "edit_intro",
+                        "target": "write_post",
+                        "label": null
+                    },
+                    {
+                        "source": "plan",
+                        "target": "draft_post",
+                        "label": null
+                    },
+                    {
+                        "source": "plan",
+                        "target": "edit_intro",
+                        "label": null
+                    },
+                    {
+                        "source": "plan",
+                        "target": "respond",
+                        "label": null
+                    },
+                    {
+                        "source": "plan",
+                        "target": "write_post",
+                        "label": null
+                    },
+                    {
+                        "source": "write_post",
+                        "target": "respond",
+                        "label": null
+                    },
+                    {
+                        "source": "respond",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

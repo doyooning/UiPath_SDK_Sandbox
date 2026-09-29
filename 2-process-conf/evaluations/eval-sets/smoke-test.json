@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "id": "smoke-test",
+  "name": "Smoke Test",
+  "evaluatorRefs": ["JsonSimilarityEvaluator"],
+  "evaluations": [
+    {
+      "id": "intro-and-post",
+      "name": "소개글 수정 + 게시물 업로드",
+      "inputs": {
+        "request": "소개글을 \"꾸준히 기록하는 백엔드 개발자입니다\"로 바꾸고, LangGraph로 UiPath 프로세스를 호출하는 방법에 대한 짧은 글을 태그 uipath, langgraph로 올려줘",
+        "dry_run": true
+      },
+      "evaluationCriterias": {
+        "JsonSimilarityEvaluator": {
+          "expectedOutput": {
+            "intro_status": "planned",
+            "post_status": "planned",
+            "intro_text": "꾸준히 기록하는 백엔드 개발자입니다"
+          }
+        }
+      }
+    },
+    {
+      "id": "intro-only",
+      "name": "소개글만 수정",
+      "inputs": {
+        "request": "자기소개를 좀 더 친근하게 바꿔줘. 요즘 RPA 공부 중이라는 내용 넣어서",
+        "dry_run": true
+      },
+      "evaluationCriterias": {
+        "JsonSimilarityEvaluator": {
+          "expectedOutput": { "intro_status": "planned", "post_status": "skipped" }
+        }
+      }
+    },
+    {
+      "id": "post-only",
+      "name": "게시물만 업로드",
+      "inputs": {
+        "request": "오늘 먹은 점심에 대한 짧은 일기를 비공개로 올려줘",
+        "dry_run": true
+      },
+      "evaluationCriterias": {
+        "JsonSimilarityEvaluator": {
+          "expectedOutput": { "intro_status": "skipped", "post_status": "planned" }
+        }
+      }
+    }
+  ]
+}
